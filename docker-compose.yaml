@@ -1,0 +1,15 @@
+version: "3.9"
+
+volumes:
+  sql_data:
+
+services:
+  database:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=$SA_PASSWORD
+    ports:
+      - 1433:1433
+    volumes:
+      - sql_data:/var/opt/mssql
