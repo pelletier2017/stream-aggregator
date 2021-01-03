@@ -2,9 +2,8 @@
 A service which aggregates where to find movies and shows on different streaming platforms.
 
 ### Build and Test
-Note: currently requires database to be running to pass tests (See Database below)
 ```
-./gradlew build
+./gradlew clean build --info
 ```
 
 # Application
@@ -18,7 +17,7 @@ In your IDE Press the red square to stop the running app.
 ### Start Database
 In the root of this git repository type the command
 ```
-docker-compose up
+docker-compose up -d
 ```
 
 ### Stop Database

@@ -12,15 +12,14 @@ import java.io.File;
 
 @SpringBootTest
 @Testcontainers
-class StreamAggregatorApplicationTests {
+class StreamAggregatorApplicationTest {
 
-//	@Container
-//	public static GenericContainer redis = new GenericContainer("redis:3.0.6").withExposedPorts(6379);
+	private static final int DEFAULT_SQL_PORT = 1433;
 
 	@Container
 	public static DockerComposeContainer environment =
 			new DockerComposeContainer(new File("docker-compose.yaml"))
-					.withExposedService("database", 1433, Wait.forListeningPort())
+					.withExposedService("database", DEFAULT_SQL_PORT, Wait.forListeningPort())
 					.withPull(false)
 					.withLocalCompose(true);
 

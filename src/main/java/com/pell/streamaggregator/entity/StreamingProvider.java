@@ -1,11 +1,11 @@
 package com.pell.streamaggregator.entity;
 
-public class StreamingService {
+public class StreamingProvider {
     private int streamingServiceId;
     private String name;
     private String url;
 
-    public StreamingService(int streamingServiceId, String name, String url) {
+    public StreamingProvider(int streamingServiceId, String name, String url) {
         this.streamingServiceId = streamingServiceId;
         this.name = name;
         this.url = url;
