@@ -19,17 +19,19 @@ repositories {
 }
 
 dependencies {
+	// spring dependency versions are managed by plugin io.spring.dependency-management
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
-	implementation 'com.microsoft.sqlserver:mssql-jdbc'
 //	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 
+	annotationProcessor 'org.projectlombok:lombok:1.18.16'
+	compileOnly 'org.projectlombok:lombok:1.18.16'
+
+	implementation 'com.microsoft.sqlserver:mssql-jdbc:8.4.1.jre11'
 	testImplementation "org.testcontainers:junit-jupiter:1.15.1"
 
 }
