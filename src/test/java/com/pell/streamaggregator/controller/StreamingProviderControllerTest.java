@@ -16,7 +16,7 @@ class StreamingProviderControllerTest {
 
     @Test
     void getStreamingServiceReturns200() throws Exception {
-        mockMvc.perform(get("/streamingServices"))
+        mockMvc.perform(get("/streamingProvider"))
                 .andExpect(status().isOk());
     }
 }

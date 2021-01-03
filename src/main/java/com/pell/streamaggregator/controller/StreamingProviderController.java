@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class StreamingProviderController {
 
-    @GetMapping("/streamingServices")
+    @GetMapping("/streamingProvider")
     @ResponseBody
     public StreamingProvider getStreamingService() {
         return new StreamingProvider(1, "amazon", "www.amazon.com");
