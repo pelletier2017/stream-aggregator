@@ -1,16 +1,21 @@
 package com.pell.streamaggregator.controller;
 
 import com.pell.streamaggregator.entity.StreamingProvider;
-import org.springframework.stereotype.Controller;
+import com.pell.streamaggregator.service.StreamingProviderService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+import java.util.List;
+
+@RestController
 public class StreamingProviderController {
 
+    @Autowired
+    private StreamingProviderService streamingProviderService;
+
     @GetMapping("/streamingProvider")
-    @ResponseBody
-    public StreamingProvider getStreamingService() {
-        return new StreamingProvider(1, "amazon", "www.amazon.com");
+    public List<StreamingProvider> getStreamingService() {
+        return streamingProviderService.getStreamingProviders();
     }
 }
