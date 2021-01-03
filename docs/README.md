@@ -1,38 +1,46 @@
-Feature goals:
+Application Feature Goals:
 1. From list of movies and shows, show which streaming platform it exists on
-1. Scheduled job to query streaming services regularly to get updates
+1. Periodically query streaming services to get updated data
 1. Additional fields for price, rent, buy under each platform
 1. Fuzzy search for movies/shows with auto-complete
 
-Project goals:
-1. git commit with passing tests results in deployment (CICD)
-1. run all tests with 1 button
-1. comprehensive docs to build, test, and run any part of the project
-1. all changes made through pull requests
-1. everything in the project exists on github
+Project Goals:
+1. Git commit with passing tests results in deployment to cloud infrastructure (CICD)
+1. Run all tests with 1 command
+1. Comprehensive docs to build, test, and run any part of the project
+1. All changes made through pull requests
+1. Everything in the project exists on github
+
+Operational Goals:
+1. Automated database backups
+1. Highly available across multiple cloud availability zones
+1. Stateless web-app that is horizontally scalable using autoscaling group
+1. Extensive monitoring allowing visibility into health of system
 
 Technology overview:
+
 SQL DBMS
-- SQL-Server
+- Microsoft SQL-Server
 
 Web App
-- Java Spring Boot
+- Spring Boot MVC (Java)
 
 Build Tool
 - Gradle
 
 Testing
-- JUnit
-- Test Containers (TODO)
+- JUnit 5
+- Test Containers
 
 Packaging
-- Docker image (TODO)
+- Amazon Machine Image (AMI) (TODO)
+- Packer (TODO)
 
 CICD
 - Github Actions
 
 Cloud Deployment
-- AWS (TODO)
+- Terraform (AWS)
 
 Scrum Board
 - Trello
