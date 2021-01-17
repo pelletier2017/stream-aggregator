@@ -15,7 +15,7 @@ public class StreamingProviderController {
     private StreamingProviderService streamingProviderService;
 
     @GetMapping("/streamingProvider")
-    public List<StreamingProvider> getStreamingService() {
-        return streamingProviderService.getStreamingProviders();
+    public List<StreamingProvider> getAllStreamingProviders() {
+        return streamingProviderService.getAllStreamingProviders();
     }
 }

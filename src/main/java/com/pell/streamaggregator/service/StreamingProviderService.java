@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 public class StreamingProviderService {
 
-    public List<StreamingProvider> getStreamingProviders() {
+    public List<StreamingProvider> getAllStreamingProviders() {
         return List.of(new StreamingProvider(1, "amazon", "www.amazon.com"));
     }
 
