@@ -5,12 +5,15 @@ volumes:
 
 services:
   database:
-    image: mcr.microsoft.com/mssql/server:2017-latest
+    build:
+      ./sql
     environment:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=$SA_PASSWORD
     ports:
       - 1433:1433
+    volumes:
+    - ./sql/:/opt/sql-startup
 ### Ignoring volumes for now to make dev easier
 #    volumes:
 #      - sql_data:/var/opt/mssql

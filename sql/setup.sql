@@ -51,3 +51,4 @@ CREATE TABLE [Media] (
   PRIMARY KEY ([ID])
 );
 
+SELECT * FROM Director;
