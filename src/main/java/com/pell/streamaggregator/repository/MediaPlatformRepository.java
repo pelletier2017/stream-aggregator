@@ -9,14 +9,14 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class StreamingProviderRepository {
+public class MediaPlatformRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public List<MediaPlatform> getStreamingProviders() {
+    public List<MediaPlatform> getMediaPlatforms() {
         // TODO this table doesnt exist yet
-        String query = "SELECT * FROM streamingProvider";
+        String query = "SELECT * FROM mediaPlatform";
         return jdbcTemplate.query(query, BeanPropertyRowMapper.newInstance(MediaPlatform.class));
     }
 }

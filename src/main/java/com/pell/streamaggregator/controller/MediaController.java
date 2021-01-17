@@ -1,7 +1,6 @@
 package com.pell.streamaggregator.controller;
 
 import com.pell.streamaggregator.entity.Media;
-import com.pell.streamaggregator.entity.MediaPlatform;
 import com.pell.streamaggregator.service.MediaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,6 +1,5 @@
 package com.pell.streamaggregator.controller;
 
-import com.pell.streamaggregator.entity.MediaPlatform;
 import com.pell.streamaggregator.entity.MediaSource;
 import com.pell.streamaggregator.service.MediaSourceService;
 import org.springframework.beans.factory.annotation.Autowired;
