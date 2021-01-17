@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class StreamingProvider {
+public class MediaPlatform {
     private int streamingServiceId;
     private String name;
     private String url;

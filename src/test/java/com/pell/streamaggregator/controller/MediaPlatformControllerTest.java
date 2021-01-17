@@ -1,8 +1,8 @@
 package com.pell.streamaggregator.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.pell.streamaggregator.entity.StreamingProvider;
-import com.pell.streamaggregator.service.StreamingProviderService;
+import com.pell.streamaggregator.entity.MediaPlatform;
+import com.pell.streamaggregator.service.MediaPlatformService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +18,8 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(controllers = StreamingProviderController.class)
-class StreamingProviderControllerTest {
+@WebMvcTest(controllers = MediaPlatformController.class)
+class MediaPlatformControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -27,18 +27,18 @@ class StreamingProviderControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
 
-    private static final List<StreamingProvider> MOCK_PROVIDERS = List.of(
-            new StreamingProvider(1, "fake", "www.fake.com")
+    private static final List<MediaPlatform> MOCK_PROVIDERS = List.of(
+            new MediaPlatform(1, "fake", "www.fake.com")
     );
 
-    private static final String STREAM_PROVIDER_PATH = "/streamingProvider";
+    private static final String STREAM_PROVIDER_PATH = "/media-platforms";
 
     @MockBean
-    private StreamingProviderService streamingProviderService;
+    private MediaPlatformService mediaPlatformService;
 
     @BeforeEach
     public void setUp() {
-        when(streamingProviderService.getAllStreamingProviders()).thenReturn(MOCK_PROVIDERS);
+        when(mediaPlatformService.getAllMediaPlatforms()).thenReturn(MOCK_PROVIDERS);
     }
 
     @Test
