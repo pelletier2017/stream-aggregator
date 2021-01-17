@@ -12,8 +12,6 @@ services:
       - SA_PASSWORD=$SA_PASSWORD
     ports:
       - 1433:1433
-    volumes:
-    - ./sql/:/opt/sql-startup
 ### Ignoring volumes for now to make dev easier
 #    volumes:
 #      - sql_data:/var/opt/mssql
