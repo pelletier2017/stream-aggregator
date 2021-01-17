@@ -1,3 +1,5 @@
+--Exported from Lucid Chart
+
 CREATE TABLE `Availability` (
   `FilmID` Int Identity(1,1),
   `StreamingServiceID` Int,
