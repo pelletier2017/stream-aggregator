@@ -5,7 +5,8 @@ volumes:
 
 services:
   database:
-    image: mcr.microsoft.com/mssql/server:2017-latest
+    build:
+      ./sql
     environment:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=$SA_PASSWORD

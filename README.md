@@ -8,6 +8,10 @@ A service which aggregates where to find movies and shows on different streaming
 
 ### Build and Test
 ```
+# start database
+docker-compose up -d
+
+# run build and test
 ./gradlew clean build --info
 ```
 
