@@ -4,6 +4,7 @@ import com.pell.streamaggregator.entity.Media;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class MediaRepository extends BaseRepository {
@@ -16,5 +17,9 @@ public class MediaRepository extends BaseRepository {
 
     public List<Media> getAllMedia() {
         return selectAll(Media.class);
+    }
+
+    public Optional<Media> findMediaById(int id) {
+        return findById(Media.class, id);
     }
 }

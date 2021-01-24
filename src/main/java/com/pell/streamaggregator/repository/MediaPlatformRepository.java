@@ -4,6 +4,7 @@ import com.pell.streamaggregator.entity.MediaPlatform;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class MediaPlatformRepository extends BaseRepository {
@@ -16,5 +17,9 @@ public class MediaPlatformRepository extends BaseRepository {
 
     public List<MediaPlatform> getAllMediaPlatforms() {
         return selectAll(MediaPlatform.class);
+    }
+
+    public Optional<MediaPlatform> findMediaPlatformById(int id) {
+        return findById(MediaPlatform.class, id);
     }
 }

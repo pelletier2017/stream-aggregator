@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MediaPlatformService {
@@ -17,4 +18,7 @@ public class MediaPlatformService {
         return mediaPlatformRepository.getAllMediaPlatforms();
     }
 
+    public Optional<MediaPlatform> findMediaPlatformById(int id) {
+        return mediaPlatformRepository.findMediaPlatformById(id);
+    }
 }

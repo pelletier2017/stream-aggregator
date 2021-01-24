@@ -21,7 +21,7 @@ CREATE TABLE [MediaSourceSubscription] (
 );
 
 CREATE TABLE [MediaSource] (
-  [MediaID] Int Identity(1,1),
+  [MediaID] Int,
   [MediaPlatformID] Int,
   [Available] Bit,
   [Rentable] Bit,

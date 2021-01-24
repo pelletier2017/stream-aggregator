@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SubscriptionService {
@@ -17,4 +18,7 @@ public class SubscriptionService {
         return subscriptionRepository.getAllSubscriptions();
     }
 
+    public Optional<Subscription> findSubscriptionById(int id) {
+        return subscriptionRepository.findSubscriptionById(id);
+    }
 }

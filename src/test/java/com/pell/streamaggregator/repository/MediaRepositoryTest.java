@@ -14,4 +14,9 @@ public class MediaRepositoryTest {
     public void getAllMediaHasNoSqlErrors() throws Exception {
         repository.getAllMedia();
     }
+
+    @Test
+    public void findMediaByIdHasNoSqlErrors() throws Exception {
+        repository.findMediaById(1);
+    }
 }

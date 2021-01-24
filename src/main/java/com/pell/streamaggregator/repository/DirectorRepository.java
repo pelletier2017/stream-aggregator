@@ -1,13 +1,10 @@
 package com.pell.streamaggregator.repository;
 
 import com.pell.streamaggregator.entity.Director;
-import lombok.NonNull;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class DirectorRepository extends BaseRepository {
@@ -20,5 +17,9 @@ public class DirectorRepository extends BaseRepository {
 
     public List<Director> getAllDirectors() {
         return selectAll(Director.class);
+    }
+
+    public Optional<Director> findDirectorById(int id) {
+        return findById(Director.class, id);
     }
 }
