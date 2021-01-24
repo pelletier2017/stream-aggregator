@@ -1,35 +1,40 @@
-# Stream Aggregator
+#Stream Aggregator
 A service which aggregates where to find movies and shows on different streaming platforms.
 
-### Prerequisites
+###Prerequisites
 - docker
 - docker-compose
 - java 11
 
-### Build and Test
+###Build and Test
+Before running tests, start the database running in docker. See [Start Database](#Start Database)
 ```
-# start database
-docker-compose up -d
-
 # run build and test
 ./gradlew clean build --info
 ```
 
-# Application
-### Start App
+##Application
+###Start App
 After building the project:
 
-1. Start the database running in docker
-    ```
-    docker-compose up -d
-    ```
+1. Start the database running in docker. See [Start Database](#Start Database)
+
 1. Start the app
     ```
     ./gradlew bootRun
     ```
-### Stop App
+###Stop App
 1. Kill the App process with ctrl+C
-1. Stop the database
-    ```
-    docker-compose down
-    ```
+1. Stop the database. See [Stop Database](#Stop Database)
+
+##Database
+The Sql Server Database Management System (DBMS) runs in a docker container alongside the app.
+###Start Database
+```
+docker-compose up -d --build
+```
+
+###Stop Database
+```
+docker-compose down
+```
