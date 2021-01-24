@@ -1,22 +1,28 @@
 package com.pell.streamaggregator.repository;
 
 import com.pell.streamaggregator.entity.MediaSourceSubscription;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
-public class MediaSourceSubscriptionRepository {
+public class MediaSourceSubscriptionRepository extends BaseRepository {
 
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+    private static final String MEDIA_SOURCE_SUBSCRIPTION_TABLE = "MediaSourceSubscription";
+
+    public MediaSourceSubscriptionRepository() {
+        super(MEDIA_SOURCE_SUBSCRIPTION_TABLE);
+    }
 
     public List<MediaSourceSubscription> getAllMediaSourceSubscriptions() {
-        // TODO this table doesnt exist yet
-        String query = "SELECT * FROM mediaSourceSubscription";
-        return jdbcTemplate.query(query, BeanPropertyRowMapper.newInstance(MediaSourceSubscription.class));
+        return selectAll(MediaSourceSubscription.class);
+    }
+
+    public Optional<MediaSourceSubscription> findMediaSourceSubscriptionById(int mediaPlatformId, int mediaId, int subscriptionId) {
+        // TODO update query to use all 3 IDs
+//        String query = "SELECT * FROM " + fullyQualifiedTableName() + " WHERE ID=" + id;
+//        List<MediaSourceSubscription> response = jdbcTemplate.query(query, BeanPropertyRowMapper.newInstance(MediaSourceSubscription.class));
+        return Optional.empty();
     }
 }

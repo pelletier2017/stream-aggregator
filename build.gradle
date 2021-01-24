@@ -29,14 +29,18 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 
+	// documentation
+	implementation 'org.springdoc:springdoc-openapi-ui:1.5.2'
+
+	// database
+	implementation 'com.microsoft.sqlserver:mssql-jdbc:8.4.1.jre11'
 	compile 'com.zaxxer:HikariCP:3.4.5'
 
+	// annotation support
 	annotationProcessor 'org.projectlombok:lombok:1.18.16'
 	compileOnly 'org.projectlombok:lombok:1.18.16'
 
-	implementation 'com.microsoft.sqlserver:mssql-jdbc:8.4.1.jre11'
 	testImplementation "org.testcontainers:junit-jupiter:1.15.1"
-
 }
 
 test {

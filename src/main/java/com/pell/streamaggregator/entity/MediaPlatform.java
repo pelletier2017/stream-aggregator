@@ -1,17 +1,19 @@
 package com.pell.streamaggregator.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 @AllArgsConstructor
-@Getter
+@NoArgsConstructor
+@Data
 public class MediaPlatform {
-    private final int id;
+    private int id;
 
     @NonNull
-    private final String name;
+    private String name;
 
     @NonNull
-    private final String url;
+    private String url;
 }

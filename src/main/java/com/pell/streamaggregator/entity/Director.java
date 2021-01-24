@@ -1,21 +1,23 @@
 package com.pell.streamaggregator.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import java.util.Date;
 
 @AllArgsConstructor
-@Getter
+@NoArgsConstructor
+@Data
 public class Director {
-    private final int id;
+    private int id;
 
     @NonNull
-    private final String firstName;
+    private String firstName;
 
     @NonNull
-    private final String lastName;
+    private String lastName;
 
-    private final Date dateOfBirth;
+    private Date dateOfBirth;
 }

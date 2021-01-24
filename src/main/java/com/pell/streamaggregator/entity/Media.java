@@ -1,22 +1,24 @@
 package com.pell.streamaggregator.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 @AllArgsConstructor
-@Getter
+@NoArgsConstructor
+@Data
 public class Media {
-    private final int id;
+    private int id;
 
     @NonNull
-    private final String name;
+    private String name;
 
-    private final int directorId;
+    private int directorId;
 
-    private final int productionYear;
+    private int productionYear;
 
-    private final int runtimeMinutes;
+    private int runtimeMinutes;
 
-    private final String summaryUrl;
+    private String summaryUrl;
 }

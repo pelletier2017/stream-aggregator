@@ -27,31 +27,31 @@ class MediaPlatformControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
 
-    private static final List<MediaPlatform> MOCK_PROVIDERS = List.of(
+    private static final List<MediaPlatform> MOCK_PLATFORMS = List.of(
             new MediaPlatform(1, "fake", "www.fake.com")
     );
 
-    private static final String STREAM_PROVIDER_PATH = "/media-platforms";
+    private static final String MEDIA_PLATFORMS_PATH = "/api/media-platforms";
 
     @MockBean
     private MediaPlatformService mediaPlatformService;
 
     @BeforeEach
     public void setUp() {
-        when(mediaPlatformService.getAllMediaPlatforms()).thenReturn(MOCK_PROVIDERS);
+        when(mediaPlatformService.getAllMediaPlatforms()).thenReturn(MOCK_PLATFORMS);
     }
 
     @Test
-    public void getStreamingServiceReturns200() throws Exception {
-        mockMvc.perform(get(STREAM_PROVIDER_PATH))
+    public void getMediaPlatformsReturns200() throws Exception {
+        mockMvc.perform(get(MEDIA_PLATFORMS_PATH))
                 .andExpect(status().isOk());
     }
 
     @Test
-    public void getStreamingServiceReturnsServiceResponse() throws Exception {
-        MvcResult result = mockMvc.perform(get(STREAM_PROVIDER_PATH)).andReturn();
+    public void getMediaPlatformsReturnsServiceResponse() throws Exception {
+        MvcResult result = mockMvc.perform(get(MEDIA_PLATFORMS_PATH)).andReturn();
         String responseBody = result.getResponse().getContentAsString();
 
-        assertThat(responseBody).isEqualToIgnoringWhitespace(objectMapper.writeValueAsString(MOCK_PROVIDERS));
+        assertThat(responseBody).isEqualToIgnoringWhitespace(objectMapper.writeValueAsString(MOCK_PLATFORMS));
     }
 }

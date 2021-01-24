@@ -1,22 +1,25 @@
 package com.pell.streamaggregator.repository;
 
 import com.pell.streamaggregator.entity.Subscription;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
-public class SubscriptionRepository {
+public class SubscriptionRepository extends BaseRepository {
 
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+    private static final String SUBSCRIPTION_TABLE = "Subscription";
+
+    public SubscriptionRepository() {
+        super(SUBSCRIPTION_TABLE);
+    }
 
     public List<Subscription> getAllSubscriptions() {
-        // TODO this table doesnt exist yet
-        String query = "SELECT * FROM subscription";
-        return jdbcTemplate.query(query, BeanPropertyRowMapper.newInstance(Subscription.class));
+        return selectAll(Subscription.class);
+    }
+
+    public Optional<Subscription> findSubscriptionById(int id) {
+        return findById(Subscription.class, id);
     }
 }

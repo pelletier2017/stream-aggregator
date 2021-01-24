@@ -1,22 +1,25 @@
 package com.pell.streamaggregator.repository;
 
 import com.pell.streamaggregator.entity.Media;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
-public class MediaRepository {
+public class MediaRepository extends BaseRepository {
 
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+    private static final String MEDIA_TABLE = "Media";
+
+    public MediaRepository() {
+        super(MEDIA_TABLE);
+    }
 
     public List<Media> getAllMedia() {
-        // TODO this table doesnt exist yet
-        String query = "SELECT * FROM media";
-        return jdbcTemplate.query(query, BeanPropertyRowMapper.newInstance(Media.class));
+        return selectAll(Media.class);
+    }
+
+    public Optional<Media> findMediaById(int id) {
+        return findById(Media.class, id);
     }
 }

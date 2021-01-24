@@ -1,25 +1,27 @@
 package com.pell.streamaggregator.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
 @AllArgsConstructor
-@Getter
+@NoArgsConstructor
+@Data
 public class MediaSource {
 
-    private final int mediaId;
+    private int mediaId;
 
-    private final int mediaPlatformId;
+    private int mediaPlatformId;
 
-    private final boolean isAvailable;
+    private boolean isAvailable;
 
-    private final boolean isRentable;
+    private boolean isRentable;
 
-    private final boolean isBuyable;
+    private boolean isBuyable;
 
-    private final BigDecimal rentPrice;
+    private BigDecimal rentPrice;
 
-    private final BigDecimal buyPrice;
+    private BigDecimal buyPrice;
 }

@@ -1,14 +1,16 @@
 package com.pell.streamaggregator.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
-@Getter
+@NoArgsConstructor
+@Data
 public class MediaSourceSubscription {
-    private final int subscriptionId;
+    private int subscriptionId;
 
-    private final int mediaId;
+    private int mediaId;
 
-    private final int mediaPlatformId;
+    private int mediaPlatformId;
 }
