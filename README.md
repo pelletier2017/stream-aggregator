@@ -1,4 +1,6 @@
 #Stream Aggregator
+![build status](https://github.com/pelletier2017/stream-aggregator/workflows/Build/badge.svg)
+
 A service which aggregates where to find movies and shows on different streaming platforms.
 
 ###Prerequisites
