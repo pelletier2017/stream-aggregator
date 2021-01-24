@@ -15,7 +15,7 @@ public class MediaSourceController {
     private MediaSourceService mediaSourceService;
 
     @GetMapping("/media-sources")
-    public List<MediaSource> getAllStreamingProviders() {
+    public List<MediaSource> getAllMediaSources() {
         return mediaSourceService.getAllMediaSources();
     }
 }

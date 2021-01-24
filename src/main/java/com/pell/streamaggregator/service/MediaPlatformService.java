@@ -14,7 +14,7 @@ public class MediaPlatformService {
     private MediaPlatformRepository mediaPlatformRepository;
 
     public List<MediaPlatform> getAllMediaPlatforms() {
-        return mediaPlatformRepository.getMediaPlatforms();
+        return mediaPlatformRepository.getAllMediaPlatforms();
     }
 
 }

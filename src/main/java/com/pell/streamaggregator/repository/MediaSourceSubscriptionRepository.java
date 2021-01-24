@@ -1,6 +1,7 @@
 package com.pell.streamaggregator.repository;
 
 import com.pell.streamaggregator.entity.MediaSourceSubscription;
+import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -9,14 +10,15 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class MediaSourceSubscriptionRepository {
+public class MediaSourceSubscriptionRepository extends BaseRepository {
 
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+    private static final String MEDIA_SOURCE_SUBSCRIPTION_TABLE = "MediaSourceSubscription";
+
+    public MediaSourceSubscriptionRepository() {
+        super(MEDIA_SOURCE_SUBSCRIPTION_TABLE);
+    }
 
     public List<MediaSourceSubscription> getAllMediaSourceSubscriptions() {
-        // TODO this table doesnt exist yet
-        String query = "SELECT * FROM mediaSourceSubscription";
-        return jdbcTemplate.query(query, BeanPropertyRowMapper.newInstance(MediaSourceSubscription.class));
+        return selectAll(MediaSourceSubscription.class);
     }
 }

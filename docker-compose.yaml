@@ -5,6 +5,7 @@ volumes:
 
 services:
   database:
+    container_name: database
     build:
       ./sql
     environment:

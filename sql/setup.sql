@@ -1,4 +1,9 @@
---Exported from Lucid Chart
+CREATE DATABASE StreamAggregator;
+GO
+
+USE StreamAggregator;
+
+-- Everything below this point is exported from Lucid Chart
 
 CREATE TABLE [Subscription] (
   [ID] Int Identity(1,1),
@@ -50,5 +55,3 @@ CREATE TABLE [Media] (
   [SummaryUrl] varchar(50),
   PRIMARY KEY ([ID])
 );
-
-SELECT * FROM Director;
