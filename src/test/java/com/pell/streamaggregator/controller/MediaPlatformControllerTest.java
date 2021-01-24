@@ -31,7 +31,7 @@ class MediaPlatformControllerTest {
             new MediaPlatform(1, "fake", "www.fake.com")
     );
 
-    private static final String MEDIA_PLATFORMS_PATH = "/media-platforms";
+    private static final String MEDIA_PLATFORMS_PATH = "/api/media-platforms";
 
     @MockBean
     private MediaPlatformService mediaPlatformService;

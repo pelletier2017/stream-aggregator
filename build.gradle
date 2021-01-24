@@ -29,7 +29,10 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 
-	// db dependencies
+	// documentation
+	implementation 'org.springdoc:springdoc-openapi-ui:1.5.2'
+
+	// database
 	implementation 'com.microsoft.sqlserver:mssql-jdbc:8.4.1.jre11'
 	compile 'com.zaxxer:HikariCP:3.4.5'
 
