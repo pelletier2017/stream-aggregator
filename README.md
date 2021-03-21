@@ -46,5 +46,5 @@ docker-compose down
 1. Wait at least a minute from starting the Docker Database.
 2. Using SQL Server switch authentication method to SQL Server Authentication. 
 3. Use Login "sa" password listed in .env
-4. Change ServerName to "Localhost" 
+4. Change ServerName to "localhost" 
 
