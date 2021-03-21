@@ -41,3 +41,9 @@ docker-compose up -d --build
 ```
 docker-compose down
 ```
+
+### Access Database
+1. Wait at least a minute from starting the Docker Database.
+2. Using SQL Server switch authentication method to SQL Server Auhentication. 
+3. Use Login sa, password listed in .env
+
