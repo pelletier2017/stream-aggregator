@@ -27,9 +27,6 @@ SELECT *
 FROM Media
 
 SELECT *
-FROM MediaSource
-
-SELECT *
 FROM MediaPlatform
 
 INSERT INTO MediaSource ([MediaID],[MediaPlatformID],[Available],[Rentable],[Buyable],[RentPrice],[BuyPrice]) 
@@ -74,4 +71,16 @@ VALUES ('Showtime','www.showtimefakeaddress.com','9.99');
 INSERT INTO Subscription ([Name],[URL],[MonthlyPrice]) 
 VALUES ('Fox','www.foxfakeaddress.com','21.99');
 
+INSERT INTO MediaPlatform ([Name],[URL]) 
+VALUES ('Netflix','www.netflix.com');
+INSERT INTO MediaPlatform  ([Name],[URL]) 
+VALUES ('Amazon Prime','www.amazon.com/prime');
+INSERT INTO MediaPlatform  ([Name],[URL]) 
+VALUES ('Hulu','www.hulu.com');
+INSERT INTO MediaPlatform  ([Name],[URL]) 
+VALUES ('Sling TV','www.sling.com');
+INSERT INTO MediaPlatform  ([Name],[URL]) 
+VALUES ('Fubo TV','www.fubo.tv');
+
 SELECT *
+FROM MediaPlatform
