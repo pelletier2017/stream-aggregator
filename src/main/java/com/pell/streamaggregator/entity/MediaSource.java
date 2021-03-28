@@ -4,16 +4,21 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class MediaSource {
+@Entity
+@IdClass(MediaSourceId.class)
+public class MediaSource  {
 
-    private int mediaId;
+    @Id
+    private long mediaId;
 
-    private int mediaPlatformId;
+    @Id
+    private long mediaPlatformId;
 
     private boolean isAvailable;
 
