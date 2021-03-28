@@ -1,13 +1,12 @@
 package com.pell.streamaggregator.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NonNull;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 @AllArgsConstructor
-@Getter
+@NoArgsConstructor
+@Data
 public class Subscription {
     private int id;
 
