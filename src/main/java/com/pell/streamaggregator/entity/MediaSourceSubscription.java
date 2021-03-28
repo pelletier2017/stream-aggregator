@@ -14,14 +14,11 @@ import java.io.Serializable;
 @IdClass(MediaSourceSubscriptionId.class)
 public class MediaSourceSubscription implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long subscriptionId;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long mediaId;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long mediaPlatformId;
 }

@@ -15,11 +15,9 @@ import java.math.BigDecimal;
 public class MediaSource  {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long mediaId;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long mediaPlatformId;
 
     private boolean isAvailable;
