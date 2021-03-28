@@ -12,11 +12,11 @@ public class MediaRepositoryTest {
 
     @Test
     public void getAllMediaHasNoSqlErrors() throws Exception {
-        repository.getAllMedia();
+        repository.findAll();
     }
 
     @Test
     public void findMediaByIdHasNoSqlErrors() throws Exception {
-        repository.findMediaById(1);
+        repository.findById(1L);
     }
 }

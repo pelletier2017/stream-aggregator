@@ -1,4 +1,4 @@
-package com.pell.streamaggregator.controller;
+package com.pell.streamaggregator.controller.support;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
