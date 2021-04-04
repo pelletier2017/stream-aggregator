@@ -12,21 +12,26 @@ import java.util.Optional;
 public class DirectorController {
 
     @Autowired
-    private DirectorService directorService;
+    private DirectorService service;
 
     @GetMapping("/directors")
     public Iterable<Director> getAll() {
-        return directorService.findAll();
+        return service.findAll();
     }
 
     @GetMapping("/directors/{id}")
     public Optional<Director> getById(@PathVariable long id) {
-        return directorService.getById(id);
+        return service.getById(id);
     }
 
     @PostMapping("/directors")
     public Director add(@RequestBody Director director) {
-        return directorService.add(director);
+        return service.add(director);
+    }
+
+    @PutMapping("/directors/{id}")
+    public Director put(@RequestBody Director director, @PathVariable long id) {
+        return service.put(director, id);
     }
 
 }

@@ -11,10 +11,10 @@ import java.util.Optional;
 public class MediaSourceSubscriptionService {
 
     @Autowired
-    private MediaSourceSubscriptionRepository mediaSourceSubscriptionRepository;
+    private MediaSourceSubscriptionRepository repository;
 
     public Iterable<MediaSourceSubscription> getAll() {
-        return mediaSourceSubscriptionRepository.findAll();
+        return repository.findAll();
     }
 
     public Optional<MediaSourceSubscription> getById(long mediaPlatformId, long mediaId, long subscriptionId) {
@@ -23,7 +23,7 @@ public class MediaSourceSubscriptionService {
     }
 
     public MediaSourceSubscription add(MediaSourceSubscription mediaSourceSubscription) {
-        return mediaSourceSubscriptionRepository.save(mediaSourceSubscription);
+        return repository.save(mediaSourceSubscription);
     }
 
 }

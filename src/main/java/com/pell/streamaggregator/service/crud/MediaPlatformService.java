@@ -11,18 +11,23 @@ import java.util.Optional;
 public class MediaPlatformService {
 
     @Autowired
-    private MediaPlatformRepository mediaPlatformRepository;
+    private MediaPlatformRepository repository;
 
     public Iterable<MediaPlatform> getAll() {
-        return mediaPlatformRepository.findAll();
+        return repository.findAll();
     }
 
     public Optional<MediaPlatform> getById(long id) {
-        return mediaPlatformRepository.findById(id);
+        return repository.findById(id);
     }
 
     public MediaPlatform add(MediaPlatform mediaPlatform) {
-        return mediaPlatformRepository.save(mediaPlatform);
+        return repository.save(mediaPlatform);
+    }
+
+    public MediaPlatform put(MediaPlatform mediaPlatform, long id) {
+        mediaPlatform.setId(id);
+        return repository.save(mediaPlatform);
     }
 
 }

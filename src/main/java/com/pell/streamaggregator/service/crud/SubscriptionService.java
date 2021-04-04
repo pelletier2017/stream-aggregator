@@ -1,5 +1,6 @@
 package com.pell.streamaggregator.service.crud;
 
+import com.pell.streamaggregator.entity.Media;
 import com.pell.streamaggregator.entity.Subscription;
 import com.pell.streamaggregator.repository.SubscriptionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,18 +12,23 @@ import java.util.Optional;
 public class SubscriptionService {
 
     @Autowired
-    private SubscriptionRepository subscriptionRepository;
+    private SubscriptionRepository repository;
 
     public Iterable<Subscription> getAll() {
-        return subscriptionRepository.findAll();
+        return repository.findAll();
     }
 
     public Optional<Subscription> getById(long id) {
-        return subscriptionRepository.findById(id);
+        return repository.findById(id);
     }
 
     public Subscription add(Subscription subscription) {
-        return subscriptionRepository.save(subscription);
+        return repository.save(subscription);
+    }
+
+    public Subscription put(Subscription subscription, long id) {
+        subscription.setId(id);
+        return repository.save(subscription);
     }
 
 }
