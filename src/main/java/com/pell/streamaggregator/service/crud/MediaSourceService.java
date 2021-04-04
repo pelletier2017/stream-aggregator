@@ -11,10 +11,10 @@ import java.util.Optional;
 public class MediaSourceService {
 
     @Autowired
-    private MediaSourceRepository mediaSourceRepository;
+    private MediaSourceRepository repository;
 
     public Iterable<MediaSource> getAll() {
-        return mediaSourceRepository.findAll();
+        return repository.findAll();
     }
 
     public Optional<MediaSource> getById(long mediaPlatformId, long mediaId) {
@@ -23,7 +23,9 @@ public class MediaSourceService {
     }
 
     public MediaSource add(MediaSource mediaSource) {
-        return mediaSourceRepository.save(mediaSource);
+        return repository.save(mediaSource);
     }
+
+
 
 }

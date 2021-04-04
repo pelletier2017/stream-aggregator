@@ -11,17 +11,22 @@ import java.util.Optional;
 public class DirectorService {
 
     @Autowired
-    private DirectorRepository directorRepository;
+    private DirectorRepository repository;
 
     public Optional<Director> getById(long id) {
-        return directorRepository.findById(id);
+        return repository.findById(id);
     }
 
     public Iterable<Director> findAll() {
-        return directorRepository.findAll();
+        return repository.findAll();
     }
 
     public Director add(Director director) {
-        return directorRepository.save(director);
+        return repository.save(director);
+    }
+
+    public Director put(Director director, long id) {
+        director.setId(id);
+        return repository.save(director);
     }
 }

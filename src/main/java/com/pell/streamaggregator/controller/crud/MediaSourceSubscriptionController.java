@@ -12,20 +12,20 @@ import java.util.Optional;
 public class MediaSourceSubscriptionController {
 
     @Autowired
-    private MediaSourceSubscriptionService mediaSourceSubscriptionService;
+    private MediaSourceSubscriptionService service;
 
     @GetMapping("/media-source-subscriptions")
     public Iterable<MediaSourceSubscription> getAll() {
-        return mediaSourceSubscriptionService.getAll();
+        return service.getAll();
     }
 
     @GetMapping("/media-source-subscriptions/{mediaPlatformId}/{mediaId}/{subscriptionId}")
     public Optional<MediaSourceSubscription> getById(@PathVariable long mediaPlatformId, @PathVariable long mediaId, @PathVariable long subscriptionId) {
-        return mediaSourceSubscriptionService.getById(mediaPlatformId, mediaId, subscriptionId);
+        return service.getById(mediaPlatformId, mediaId, subscriptionId);
     }
 
     @PostMapping("/media-source-subscriptions")
     public MediaSourceSubscription add(@RequestBody MediaSourceSubscription mediaSourceSubscription) {
-        return mediaSourceSubscriptionService.add(mediaSourceSubscription);
+        return service.add(mediaSourceSubscription);
     }
 }

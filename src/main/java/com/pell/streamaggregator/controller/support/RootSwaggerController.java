@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class RootController {
+public class RootSwaggerController {
 
     private static final String SWAGGER_UI_PATH = "/swagger-ui.html";
 
