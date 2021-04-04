@@ -7,6 +7,8 @@ A service which aggregates where to find movies and shows on different streaming
 ### Prerequisites
 - docker
 - docker-compose
+- terraform
+- aws CLI
 - java 11
 
 ### Build and Test
