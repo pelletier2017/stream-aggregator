@@ -1,3 +1,3 @@
-output "web_app_public_ip" {
-  value = aws_instance.web-app-ec2.public_ip
+output "web_app_elastic_ip" {
+  value = aws_eip.one.public_ip
 }

@@ -4,9 +4,14 @@ variable "web_app_ami" {
 }
 
 variable "web_app_ec2_type" {
-  description = "size of web app AWS ec2 instance"
+  description = "instance type of web app AWS ec2 instance"
   type        = string
 }
+
+//variable "web_app_priv_ip" {
+//  description = "private ip of the web app ec2 instance"
+//  type        = string
+//}
 
 variable "database_ami" {
   description = "ami to use for database ec2 instance"
@@ -14,7 +19,7 @@ variable "database_ami" {
 }
 
 variable "database_ec2_type" {
-  description = "size of AWS ec2 instance"
+  description = "instance type of AWS ec2 instance"
   type        = string
 }
 

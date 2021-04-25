@@ -5,10 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,6 +21,10 @@ public class Media {
     private String name;
 
     private int directorId;
+
+//    @ManyToOne
+//    @JoinColumn(name = "directorId")
+//    private Director director;
 
     private int productionYear;
 

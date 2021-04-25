@@ -5,11 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,6 +18,9 @@ public class Director {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+//    @OneToMany
+//    List<Media> mediaList;
 
     @NonNull
     private String firstName;
